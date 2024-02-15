@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import Hi from "./Hi";
+import { useState } from "react";
 
 interface Props {}
 
@@ -15,7 +14,7 @@ const Home: React.FC<Props> = () => {
         alignItems: "center",
       }}
     >
-      {counter}
+      <input value={counter} />
       <button
         style={{ width: "100px" }}
         onClick={() => {
@@ -25,7 +24,6 @@ const Home: React.FC<Props> = () => {
         +1
       </button>
       변경됨
-      <Hi />
     </div>
   );
 };
