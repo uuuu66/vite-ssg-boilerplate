@@ -1,4 +1,4 @@
-# vite-ssg-boilerplate
+# vite-ssg-ssr-boilerplate
 
 reference: [reference](https://ogzhanolguncu.com/blog/react-ssr-ssg-from-scratch)
 
