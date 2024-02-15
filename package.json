@@ -8,7 +8,8 @@
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.tsx --outDir dist/server",
     "generate": "vite build --outDir dist/static && npm run build:server && node prerender",
-    "serve": "cross-env NODE_ENV=production node server"
+    "ssr": "npm run build && node server",
+    "ssg": "npm run generate && serve dist/static"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -16,7 +17,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3",
-    "serve": "^14.2.1",
     "sirv": "^2.0.4"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "@vitejs/plugin-react": "^4.2.1",
     "cross-env": "^7.0.3",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "vite": "^5.0.10",
+    "serve": "^14.2.1"
   }
 }
