@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {}
 
 const Home: React.FC<Props> = () => {
   const [counter, setCounter] = useState(0);
+  const navigate = useNavigate();
   return (
     <div
       style={{
@@ -23,7 +25,13 @@ const Home: React.FC<Props> = () => {
       >
         +1
       </button>
-      변경됨
+      <button
+        onClick={() => {
+          navigate("hi");
+        }}
+      >
+        to hi
+      </button>
     </div>
   );
 };
