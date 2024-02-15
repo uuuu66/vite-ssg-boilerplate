@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 const PagePathsWithComponents: Record<string, { default: any }> =
   import.meta.glob(["./pages/**/*.tsx"], {
@@ -10,7 +10,7 @@ const routes = Object.keys(PagePathsWithComponents).map((path: string) => {
 
   return {
     name,
-    path: `/${name.toLowerCase()}`,
+    path: name === "index" ? "/" : `/${name.toLowerCase()}`,
     component: PagePathsWithComponents[path]?.default,
   };
 });
