@@ -37,7 +37,7 @@ export async function createServer() {
 }
 
 createServer().then(({ app }) =>
-  app.listen(3033, () => {
-    console.log("http://localhost:3033");
+  app.listen(3001, () => {
+    console.log("react vite server : http://localhost:3033");
   })
 );
