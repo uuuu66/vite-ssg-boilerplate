@@ -1,10 +1,11 @@
-import { HtmlHTMLAttributes, PropsWithChildren } from "react";
+import { HtmlHTMLAttributes, PropsWithChildren, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 interface Props extends PropsWithChildren<HtmlHTMLAttributes<HTMLDivElement>> {}
-const SectionContainer: React.FC<Props> = (props) => {
+const SectionContainer = forwardRef<HTMLDivElement, Props>((props, ref) => {
   return (
     <section
+      ref={ref}
       {...props}
       className={twMerge(
         "h-screen min-h-screen max-h-screen w-full flex justify-center items-center",
@@ -14,6 +15,6 @@ const SectionContainer: React.FC<Props> = (props) => {
       {props.children}
     </section>
   );
-};
+});
 
 export default SectionContainer;

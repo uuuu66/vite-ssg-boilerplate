@@ -1,9 +1,10 @@
+import { PropsWithChildren, forwardRef } from "react";
 import Responsable from "../components/Responsable";
 import SectionContainer from "../components/SectionContainer";
 
-const TeamSection: React.FC = () => {
+const TeamSection = forwardRef<HTMLDivElement, PropsWithChildren>((_, ref) => {
   return (
-    <SectionContainer>
+    <SectionContainer ref={ref}>
       <Responsable
         pc={<div>ss</div>}
         tablet={<div>ss</div>}
@@ -11,5 +12,5 @@ const TeamSection: React.FC = () => {
       />
     </SectionContainer>
   );
-};
+});
 export default TeamSection;
